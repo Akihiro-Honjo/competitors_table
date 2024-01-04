@@ -26,7 +26,7 @@ try {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DB連携型todoリスト（一覧画面）</title>
+  <title>一覧画面</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <style>
@@ -38,20 +38,27 @@ try {
     border-radius: 10px;
     width: auto;
 }
-.a {
+.btn_a {
   text-decoration: none;
 }
+
 
 </style>
 
 <body>
-<fieldset>
-    <legend>DB連携型todoリスト（一覧画面）</legend>
-    <a href="index_input.php">入力画面</a>
+
+    <legend>一覧画面</legend>
+    <a href="index_input.php">トップページ</a>
+    <div class="btn_a">
+    <button class="btn"><a href="competitor_A.php">A社の情報</a></button>
+    </div>
     <div class="post">
         <?= $output ?>
     </div>
-  </fieldset>
+
+
+
+
 <script>
    
     let postList = <?= json_encode($result) ?>;
@@ -70,6 +77,7 @@ try {
             `;
         }).join('');
     }
+    // 削除確認
     function deleteCheck() {
    var ret=confirm("本当に削除しますか？");
    if(!ret);
